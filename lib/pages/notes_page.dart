@@ -63,6 +63,9 @@ class _NotesPageState extends State<NotesPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: bodyTextEditingController,
+                    decoration: const InputDecoration(
+                      labelText: "Note's Heading",
+                    ),
                     onChanged: (text) {
                       setState(() {
                         heading = text;
@@ -80,6 +83,9 @@ class _NotesPageState extends State<NotesPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       controller: headingTextEditingController,
+                      decoration: const InputDecoration(
+                        labelText: "Your note goes here...",
+                      ),
                       onChanged: (text) {
                         setState(() {
                           body = text;

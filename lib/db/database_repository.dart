@@ -39,10 +39,10 @@ class DatabaseRepository {
     );
   }
 
-  Future<List<Note>> notes() async {
+  Future<Iterable<Note>> notes() async {
     final db = await database;
     final List<Map<String,dynamic>> maps = await db.query('notes');
-    return List.generate(maps.length, (i) => Note.fromJson(maps[i]));
+    return Iterable.generate(maps.length, (i) => Note.fromJson(maps[i]));
   }
 
   Future<int> updateNote(Note note) async {

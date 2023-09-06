@@ -20,10 +20,10 @@ class _HomePageState extends State<HomePage> {
 
   List<Note> notes = [];
 
-  void getNotesData() {
+  void getNotesData() async {
     DatabaseRepository databaseRepository = DatabaseRepository();
-    setState(() {
-      notes.addAll(databaseRepository.notes() as Iterable<Note>);
+    setState(() async {
+      notes.addAll(await databaseRepository.notes());
     });
   }
 
